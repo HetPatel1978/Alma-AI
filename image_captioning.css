@@ -1,0 +1,147 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh; /* Full height of the viewport */
+    width: 100vw; /* Full width of the viewport */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #1c1c1e; /* Dark background */
+    color: #f1f1f1; /* Light text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    padding: 20px; /* Padding to prevent overflow on smaller devices */
+    opacity: 0; /* Start with opacity 0 */
+    animation: fadeInPage 1s forwards ease-out; /* Page fade-in animation */
+}
+
+h1 {
+    font-size: 2.5rem; /* Responsive font size */
+    font-weight: 600;
+    color: #ffffff; /* White text for the title */
+    margin-bottom: 20px; /* Spacing below the title */
+    opacity: 0; /* Hidden initially */
+    animation: fadeInUp 1s forwards ease-out 0.2s; /* Fade in with a slight delay */
+}
+
+h2 {
+    margin-top: 20px; /* Spacing above result */
+    font-size: 1.5rem; /* Font size for the result */
+    color: #d1d1d1; /* Light gray text for the result */
+    opacity: 0;
+    animation: fadeInUp 1.2s forwards ease-out 0.4s; /* Fade in with delay */
+}
+
+input[type="file"] {
+    margin-top: 15px; /* Spacing above the file input */
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2c2c2e; /* Darker input background */
+    color: #d1d1d1; /* Light gray text */
+    cursor: pointer; /* Pointer cursor */
+    opacity: 0;
+    animation: fadeInUp 1.4s forwards ease-out 0.6s; /* Staggered fade-in */
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    background-color: #007aff; /* Blue button background */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px; /* Button padding */
+    font-size: 1rem; /* Button text size */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #005bb5; /* Darker blue on hover */
+}
+
+button {
+    margin-top: 20px; /* Spacing above the button */
+    padding: 15px 30px;
+    background-color: #2c2c2e; /* Button background */
+    color: #ffffff; /* Button text color */
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem; /* Responsive font size */
+    opacity: 0; /* Hidden initially */
+    animation: fadeInUp 1.6s forwards ease-out 0.8s; /* Fade in with delay */
+}
+
+button:hover {
+    background-color: #3a3a3c; /* Lighter background on hover */
+    transform: translateY(-2px); /* Button lift effect */
+}
+
+#preview {
+    margin: 20px 0; /* Spacing around the image preview */
+    opacity: 0;
+    animation: fadeInUp 1.8s forwards ease-out 1s; /* Fade in with delay */
+}
+
+img {
+    max-width: 100%; /* Responsive image */
+    max-height: 300px; /* Limit height */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow around images */
+    opacity: 0; /* Initially hidden */
+    animation: fadeInUp 1.8s forwards ease-out 1.2s; /* Fade in later */
+}
+
+/* Animation for fading and sliding in */
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Slight upward movement */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Smaller title on smaller screens */
+    }
+
+    button {
+        width: 90%; /* Slightly narrower on smaller screens */
+    }
+
+    input[type="file"] {
+        width: 90%; /* Slightly narrower on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Even smaller title on mobile screens */
+    }
+
+    button {
+        padding: 12px 20px; /* Adjust button padding */
+        font-size: 0.9rem; /* Smaller font size */
+    }
+}

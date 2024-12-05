@@ -1,0 +1,89 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #f1f1f1;
+    background-color: #1c1c1e;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 10px 10px; /* Controls the size of the bumps */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: playfair display;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 40px;
+    margin-right: 100px;
+    font-size: 80px;
+}
+
+/* Grid container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+}
+
+.grid-container a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c2c2e;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 22px;
+    color: #d1d1d1;
+    text-decoration: none;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.grid-container a:hover {
+    background-color: #4a4a4d;
+    color: #ffffff;
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    position: fixed; /* Stick to the bottom */
+    left: 0;
+    bottom: 0; /* Align at the bottom */
+    width: 100%; /* Full width across the page */
+    text-align: center; /* Center the text */
+    padding: 10px 0; /* Padding for spacing */
+    background-color: #1c1c1e; /* Dark background matching your theme */
+    color: #a1a1a1; /* Light gray text */
+    font-size: 14px;
+    z-index: 100; /* Ensure it stays above other elements */
+}
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-container a {
+        padding: 40px;
+    }
+}
